@@ -1,0 +1,13 @@
+[package]
+name = "simdintersection-sys"
+version = "0.1.0"
+authors = ["Andrew Pendleton <andrew@mapbox.com>"]
+
+[dependencies]
+
+[build-dependencies]
+cc = "1.0"
+
+[lib]
+name = "simdintersection_sys"
+path = "lib.rs"

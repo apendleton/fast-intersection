@@ -1,0 +1,10 @@
+[package]
+name = "fast-intersection"
+version = "0.1.0"
+authors = ["Andrew Pendleton <andrew@mapbox.com>"]
+
+[dependencies]
+simdintersection-sys = { path = "simdintersection-sys" }
+
+[lib]
+path = "lib.rs"

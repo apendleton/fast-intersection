@@ -1,0 +1,3 @@
+[submodule "simdintersection-sys/SIMDCompressionAndIntersection"]
+	path = simdintersection-sys/SIMDCompressionAndIntersection
+	url = https://github.com/lemire/SIMDCompressionAndIntersection.git
