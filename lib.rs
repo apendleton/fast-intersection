@@ -31,3 +31,48 @@ fn simple_intersection() {
     let inter = simd_intersection(&a, &b);
     assert_eq!(inter, vec![3, 5]);
 }
+
+#[cfg(test)]
+mod fuzz_tests {
+    extern crate slow_intersection;
+    extern crate rand;
+    use fuzz_tests::rand::distributions::{Distribution, Uniform};
+
+    use std::collections::HashSet;
+    use fuzz_tests::slow_intersection::*;
+    use super::*;
+
+    #[test]
+    #[ignore]
+    fn rand_intersections() {
+        let values = Uniform::from(1..10000);
+        let lengths = Uniform::from(100..1000);
+        let mut rng = rand::thread_rng();
+
+        for _ in 0..10000 {
+            let mut s1: HashSet<u32> = HashSet::new();
+            let l1 = lengths.sample(&mut rng);
+            let mut s2: HashSet<u32> = HashSet::new();
+            let l2 = lengths.sample(&mut rng);
+
+            while s1.len() < l1 {
+                s1.insert(values.sample(&mut rng));
+            }
+            while s2.len() < l2 {
+                s2.insert(values.sample(&mut rng));
+            }
+
+            let mut s1: Vec<u32> = s1.iter().cloned().collect();
+            s1.sort();
+            let mut s2: Vec<u32> = s2.iter().cloned().collect();
+            s2.sort();
+
+            let simd = simd_intersection(&s1, &s2);
+            let merge = merge_intersection(&s1, &s2);
+            let hash = hashset_intersection(&s1, &s2);
+
+            assert_eq!(simd, merge);
+            assert_eq!(simd, hash);
+        }
+    }
+}

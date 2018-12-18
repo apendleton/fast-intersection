@@ -1,0 +1,9 @@
+[package]
+name = "slow-intersection"
+version = "0.1.0"
+authors = ["Andrew Pendleton <andrew@mapbox.com>"]
+
+[lib]
+path = "lib.rs"
+
+[dependencies]
