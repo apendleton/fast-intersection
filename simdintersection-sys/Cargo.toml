@@ -4,9 +4,10 @@ version = "0.1.0"
 authors = ["Andrew Pendleton <andrew@mapbox.com>"]
 
 [dependencies]
+cpp = "0.5"
 
 [build-dependencies]
-cc = "1.0"
+cpp_build = "0.5"
 
 [lib]
 name = "simdintersection_sys"
