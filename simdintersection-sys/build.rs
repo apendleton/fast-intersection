@@ -14,6 +14,7 @@ fn main() {
         .file("SIMDCompressionAndIntersection/src/intersection.cpp")
         .flag("-fpic")
         .flag("-mavx")
+        .flag("-mavx2")
         .flag("-std=c++11")
         .flag("-Weffc++")
         .flag("-pedantic")

@@ -39,8 +39,9 @@ pub fn benchmark(c: &mut Criterion) {
 
     let funcs: Vec<(&str, &Fn(&[u32], &[u32]) -> Vec<u32>)> = vec![
         ("simd", &simd_intersection),
+        ("simd_avx2", &simd_intersection_avx2),
         ("merge", &merge_intersection),
-        ("hash", &hashset_intersection)
+        ("hash", &hashset_intersection),
     ];
     for (name, intersection_func) in funcs {
         // not a real clone, just a refcount bump
