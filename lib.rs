@@ -12,7 +12,7 @@ pub fn simd_intersection(set1: &[u32], set2: &[u32]) -> Vec<u32> {
         let mut dst = Vec::with_capacity(maxlen);
         let pdst = dst.as_mut_ptr();
 
-        let dstlen = simdintersection_sys::_ZN18SIMDCompressionLib16SIMDintersectionEPKjmS1_mPj(
+        let dstlen = simdintersection_sys::SIMDintersection(
             pset1,
             len1,
             pset2,
