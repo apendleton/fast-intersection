@@ -1,3 +1,6 @@
 [submodule "simdintersection-sys/SIMDCompressionAndIntersection"]
 	path = simdintersection-sys/SIMDCompressionAndIntersection
 	url = https://github.com/lemire/SIMDCompressionAndIntersection.git
+[submodule "streamvbyte-sys/streamvbyte"]
+	path = streamvbyte-sys/streamvbyte
+	url = https://github.com/lemire/streamvbyte.git
